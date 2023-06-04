@@ -14,8 +14,8 @@ const Navbar = () => {
           <div className="Navbar__menuItem"></div>
           <div className="Navbar__menuItem"></div>
         </div>
-        <div className="Navbar__authContainer"></div>
-        <div className="Navbar__profileContainer"></div>
+        {/* <div className="Navbar__authContainer"></div>
+        <div className="Navbar__profileContainer"></div> */}
       </div>
       <div className="Navbar__divider"></div>
     </div>
