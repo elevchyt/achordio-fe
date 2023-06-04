@@ -7,12 +7,12 @@ type PropsType = {
 };
 
 const LinkButton = (props: PropsType) => {
-  const redirect = () => {
-    window.location.href = props.link;
-  };
-
   const linkVariants = {
     hover: { y: -4, color: "#fe3c3c" },
+  };
+
+  const redirect = () => {
+    window.location.href = props.link;
   };
 
   return (
