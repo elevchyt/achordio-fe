@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import Logo from "components/ui/Logo";
+import LinkButton from "components/ui/LinkButton";
 
 const Navbar = () => {
   return (
@@ -9,11 +10,14 @@ const Navbar = () => {
         <div className="Navbar__logo">
           <Logo />
         </div>
-        <div className="Navbar__menuItemsContainer">
-          <div className="Navbar__menuItem"></div>
-          <div className="Navbar__menuItem"></div>
-          <div className="Navbar__menuItem"></div>
-        </div>
+        <nav className="Navbar__menuItemsContainer">
+          <ul className="Navbar__menuItem">
+            <LinkButton text={"ΤΡΑΓΟΥΔΙΑ"} link={"/songs"} />
+          </ul>
+          <ul className="Navbar__menuItem">
+            <LinkButton text={"ΚΑΛΛΙΤΕΧΝΕΣ"} link={"/artists"} />
+          </ul>
+        </nav>
         {/* <div className="Navbar__authContainer"></div>
         <div className="Navbar__profileContainer"></div> */}
       </div>
