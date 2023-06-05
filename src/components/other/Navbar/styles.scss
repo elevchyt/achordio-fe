@@ -2,7 +2,9 @@
 
 .Navbar {
   padding: 0 32px;
-  width: calc(100% - 32px * 2); // take care of the left & right padding by multiplying by 2
+  width: calc(
+    100% - 32px * 2
+  ); // take care of the left & right padding by multiplying by 2
   height: 10vh;
   display: flex;
   flex-direction: column;
@@ -38,6 +40,19 @@
   &__menuItem {
     height: 100%;
     padding: 0 12px;
+  }
+
+  &__authContainer {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__authButton {
+    width: 130px;
+    height: 38px;
   }
 
   &__divider {

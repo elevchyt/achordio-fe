@@ -1,6 +1,7 @@
 {
   "NAVBAR": {
     "SONGS": "SONGS",
-    "ARTISTS": "ARTISTS"
+    "ARTISTS": "ARTISTS",
+    "CONNECT": "Login"
   }
 }
