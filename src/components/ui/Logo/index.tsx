@@ -1,12 +1,19 @@
 import "./styles.scss";
 import logoImageUrl from "assets/imgs/achordio-logo.png";
+import { motion } from "framer-motion";
+import { redirect } from "utils/genericUtils";
 
 const Logo = () => {
   return (
-    <div
+    <motion.div
+      whileHover={{ rotate: 360 }}
+      transition={{ type: "spring", stiffness: 120, duration: 0.5 }}
       className="Logo"
       style={{ backgroundImage: `url(${logoImageUrl})` }}
-    ></div>
+      onClick={() => {
+        redirect("/");
+      }}
+    ></motion.div>
   );
 };
 
