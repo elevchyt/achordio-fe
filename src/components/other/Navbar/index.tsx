@@ -24,7 +24,7 @@ const Navbar = () => {
         </nav>
         <div className="Navbar__authContainer">
           <div className="Navbar__authButton">
-            <Button type={"secondary"} text={t('NAVBAR.CONNECT')} />
+            <Button type={"secondary"} text={t("NAVBAR.CONNECT")} />
           </div>
         </div>
         {/* <div className="Navbar__profileContainer"></div> */}

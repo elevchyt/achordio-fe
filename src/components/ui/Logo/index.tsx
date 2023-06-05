@@ -7,6 +7,7 @@ const Logo = () => {
   return (
     <motion.div
       whileHover={{ rotate: 360 }}
+      whileTap={{ y: 4, scale: 0.8 }}
       transition={{ type: "spring", stiffness: 120, duration: 0.5 }}
       className="Logo"
       style={{ backgroundImage: `url(${logoImageUrl})` }}

@@ -10,6 +10,7 @@ type PropsType = {
 const LinkButton = (props: PropsType) => {
   const linkVariants = {
     hover: { y: -4, color: "#fe3c3c" },
+    click: { y: 4, scale: 0.8 },
   };
 
   return (
@@ -18,6 +19,7 @@ const LinkButton = (props: PropsType) => {
       onClick={() => {
         redirect(props.link);
       }}
+      whileTap="click"
       whileHover="hover"
     >
       <motion.a
