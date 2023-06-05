@@ -10,7 +10,7 @@ type PropsType = {
 const Button = (props: PropsType) => {
   return (
     <div className="Button">
-      {props.type == "primary" ? (
+      {props.type === "primary" ? (
         <motion.button
           className="Button__primary"
           whileHover={{

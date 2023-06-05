@@ -1,10 +1,8 @@
-@import "../../../assets/colors.scss";
+@import "assets/colors.scss";
 
 .Navbar {
   padding: 0 32px;
-  width: calc(
-    100% - 32px * 2
-  ); // take care of the left & right padding by multiplying by 2
+  margin-bottom: 42px;
   height: 10vh;
   display: flex;
   flex-direction: column;

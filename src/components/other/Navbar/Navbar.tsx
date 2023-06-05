@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles.scss";
-import Logo from "components/ui/Logo";
-import LinkButton from "components/ui/LinkButton";
+import Logo from "components/ui/Logo/Logo";
+import LinkButton from "components/ui/LinkButton/LinkButton";
 import { useTranslation } from "react-i18next";
-import Button from "components/ui/Button";
+import Button from "components/ui/Button/Button";
 
 const Navbar = () => {
   const { t } = useTranslation();
