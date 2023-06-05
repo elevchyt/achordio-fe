@@ -4,6 +4,7 @@ import "./styles.scss";
 type PropsType = {
   type: "primary" | "secondary";
   text: string;
+  functionality: () => void;
 };
 
 const Button = (props: PropsType) => {
@@ -26,6 +27,7 @@ const Button = (props: PropsType) => {
             boxShadow: "1px 1px 0 rgba(0, 0, 0, 0.2)",
           }}
           transition={{ duration: 0.2 }}
+          onClick={props.functionality}
         >
           {props.text}
         </motion.button>
@@ -46,6 +48,7 @@ const Button = (props: PropsType) => {
             boxShadow: "1px 1px 0 rgba(0, 0, 0, 0.2)",
           }}
           transition={{ duration: 0.2 }}
+          onClick={props.functionality}
         >
           {props.text}
         </motion.button>
