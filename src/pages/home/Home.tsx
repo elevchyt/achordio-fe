@@ -1,4 +1,4 @@
-import Patterns from "components/other/Patterns/Patterns";
+import Patterns from "components/graphics/Patterns/Patterns";
 import "./styles.scss";
 
 const Home = () => {
