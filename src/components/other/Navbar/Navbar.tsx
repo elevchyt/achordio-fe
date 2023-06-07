@@ -23,6 +23,9 @@ const Navbar = () => {
           <ul className="Navbar__menuItem">
             <LinkButton text={t("NAVBAR.ARTISTS")} link={"/artists"} />
           </ul>
+          <ul className="Navbar__menuItem">
+            <LinkButton text={t("NAVBAR.NEWS")} link={"/news"} />
+          </ul>
         </nav>
 
         {/* show profile info if authenticated */}

@@ -35,8 +35,8 @@ const Home = () => {
       </div>
       <motion.div
         className="Home__buttonSong"
-        initial={{ opacity: 0, scale: 1.2 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 1.2, visibility: "hidden" }}
+        animate={{ opacity: 1, scale: 1, visibility: "visible" }}
         transition={{ delay: 3, type: "spring", bounce: 0.5, stiffness: 120 }}
       >
         <Button type={"primaryBig"} text={t("HOME.FIND_A_SONG")} />

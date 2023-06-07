@@ -6,6 +6,7 @@ import Navbar from "components/other/Navbar/Navbar";
 import Home from "pages/home/Home";
 import Songs from "pages/songs/Songs";
 import Artists from "pages/artists/Artists";
+import News from "pages/news/News";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Songs />} />
         <Route path="/artists" element={<Artists />} />
+        <Route path="/news" element={<News />} />
       </Routes>
       <Spinner isLoading={isLoading} />
     </div>
