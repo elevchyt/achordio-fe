@@ -5,15 +5,23 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n"; // Import the i18n configuration file
+import { AuthProvider } from "react-auth-kit";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18n}>
-      <App />
-    </I18nextProvider>
+    <AuthProvider
+      authType={"cookie"}
+      authName={"_auth"}
+      cookieDomain={window.location.hostname}
+      cookieSecure={window.location.protocol === "https:"}
+    >
+      <I18nextProvider i18n={i18n}>
+        <App />
+      </I18nextProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 

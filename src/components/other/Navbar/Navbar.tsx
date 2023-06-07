@@ -4,8 +4,10 @@ import Logo from "components/ui/Logo/Logo";
 import LinkButton from "components/ui/LinkButton/LinkButton";
 import { useTranslation } from "react-i18next";
 import Button from "components/ui/Button/Button";
+import { useIsAuthenticated } from "react-auth-kit";
 
 const Navbar = () => {
+  const isAuthenticated = useIsAuthenticated();
   const { t } = useTranslation();
 
   return (
@@ -27,7 +29,6 @@ const Navbar = () => {
             <Button
               type={"secondary"}
               text={t("NAVBAR.CONNECT")}
-              functionality={() => {}}
             />
           </div>
         </div>

@@ -4,7 +4,7 @@ import "./styles.scss";
 type PropsType = {
   type: "primary" | "secondary";
   text: string;
-  functionality: () => void;
+  functionality?: () => void;
 };
 
 const Button = (props: PropsType) => {
