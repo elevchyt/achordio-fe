@@ -12,7 +12,7 @@ const Logo = () => {
       className="Logo"
       style={{ backgroundImage: `url(${logoImageUrl})` }}
       onClick={() => {
-        redirect("/");
+        redirect("/", 500);
       }}
     ></motion.div>
   );

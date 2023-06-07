@@ -17,7 +17,7 @@ const LinkButton = (props: PropsType) => {
     <motion.li
       className="LinkButton"
       onClick={() => {
-        redirect(props.link);
+        redirect(props.link, 500);
       }}
       whileTap="click"
       whileHover="hover"
