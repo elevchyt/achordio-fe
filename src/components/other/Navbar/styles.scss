@@ -1,7 +1,7 @@
 @import "assets/colors.scss";
 
 .Navbar {
-  padding: 0 32px;
+  padding: 0 48px;
   margin-bottom: 42px;
   height: 10vh;
   display: flex;
@@ -40,8 +40,16 @@
     padding: 0 12px;
   }
 
-  &__authContainer {
-    width: 30%;
+  // unauthenticated elements styling
+  &__unauthenticatedContainer {
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__authButtonsContainer {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -53,7 +61,30 @@
     height: 38px;
   }
 
-  &__divider {
+  // authenticated elements styling
+  &__authenticatedContainer {
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__profileContainer {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__dividerVertical {
+    width: 1px;
+    height: 72%;
+    margin: 0 24px;
+    background-color: $grey-700;
+  }
+
+  &__dividerHorizontal {
     width: 72%;
     height: 1px;
     background-color: $grey-700;

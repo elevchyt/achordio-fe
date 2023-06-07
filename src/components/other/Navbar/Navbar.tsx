@@ -24,17 +24,27 @@ const Navbar = () => {
             <LinkButton text={t("NAVBAR.ARTISTS")} link={"/artists"} />
           </ul>
         </nav>
-        <div className="Navbar__authContainer">
-          <div className="Navbar__authButton">
-            <Button
-              type={"secondary"}
-              text={t("NAVBAR.CONNECT")}
-            />
+
+        {/* show profile info if authenticated */}
+        {isAuthenticated() ? (
+          <div className="Navbar__authenticatedContainer">
+            <div className="Navbar__authButton">
+              <Button type={"secondary"} text={t("NAVBAR.CREATE")} />
+            </div>
+            <div className="Navbar__dividerVertical"></div>
+            <div className="Navbar__profileContainer"></div>
           </div>
-        </div>
-        {/* <div className="Navbar__profileContainer"></div> */}
+        ) : (
+          <div className="Navbar__unauthenticatedContainer">
+            <div className="Navbar__authButtonsContainer">
+              <div className="Navbar__authButton">
+                <Button type={"secondary"} text={t("NAVBAR.CONNECT")} />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-      <div className="Navbar__divider"></div>
+      <div className="Navbar__dividerHorizontal"></div>
     </div>
   );
 };
