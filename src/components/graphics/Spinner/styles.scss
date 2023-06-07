@@ -2,13 +2,16 @@
 
 .Spinner {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.1);
   width: 100%;
-  height: calc(90vh - 42px);
+  height: 100%;
+  pointer-events: none;
 
   div {
     position: absolute;

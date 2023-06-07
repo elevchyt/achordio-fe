@@ -1,13 +1,13 @@
 import Patterns from "components/graphics/Patterns/Patterns";
 import "./styles.scss";
 
-const Home = () => {
+const Songs = () => {
   return (
-    <div className="Home">
-      <h1>Home</h1>
+    <div className="Songs">
+      <h1>Songs</h1>
       <Patterns />
     </div>
   );
 };
 
-export default Home;
+export default Songs;
