@@ -4,5 +4,9 @@
     "ARTISTS": "ARTISTS",
     "CONNECT": "Login",
     "CREATE": "Create"
+  },
+  "HOME": {
+    "SUBTITLE": "The largest chord chart library in the world...",
+    "FIND_A_SONG": "Find a song!"
   }
 }

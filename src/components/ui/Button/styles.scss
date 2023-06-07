@@ -29,4 +29,17 @@
     user-select: none;
     cursor: pointer;
   }
+
+  &__primaryBig {
+    width: 100%;
+    height: 100%;
+    background-color: $red-500;
+    color: $white;
+    border: 3px solid $red-500;
+    border-radius: 22px;
+    font-size: 1.4em;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+  }
 }
