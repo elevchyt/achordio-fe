@@ -2,11 +2,16 @@ import "./styles.scss";
 import Lottie from "lottie-react";
 import spinnerRedAnimation from "assets/lottie/spinner.json";
 
-const Spinner = () => {
+type PropsType = {
+  isLoading: boolean;
+};
+
+const Spinner = (props: PropsType) => {
   return (
     <div className="Spinner">
-      <div className="Spinner__backdrop"></div>
-      <Lottie animationData={spinnerRedAnimation} loop={true} />
+      {props.isLoading ? (
+        <Lottie animationData={spinnerRedAnimation} loop={true} />
+      ) : null}
     </div>
   );
 };

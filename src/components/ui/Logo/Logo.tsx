@@ -1,9 +1,10 @@
 import "./styles.scss";
 import logoImageUrl from "assets/imgs/achordio-logo.png";
 import { motion } from "framer-motion";
-import { redirect } from "utils/genericUtils";
+import { useNavigate } from "react-router-dom";
 
 const Logo = () => {
+  const navigate = useNavigate();
   return (
     <motion.div
       whileHover={{ rotate: 360 }}
@@ -12,7 +13,7 @@ const Logo = () => {
       className="Logo"
       style={{ backgroundImage: `url(${logoImageUrl})` }}
       onClick={() => {
-        redirect("/", 500);
+        navigate("/");
       }}
     ></motion.div>
   );
