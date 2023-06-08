@@ -1,6 +1,6 @@
 import "./styles.scss";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 
@@ -13,10 +13,6 @@ type PropsType = {
 const Modal = (props: PropsType) => {
   const { t } = useTranslation();
   const title = useRef<string>("Title");
-
-  // useEffect(() => {
-  //   title.current = title.current + 1;
-  // });
 
   const modalBodyRender = () => {
     switch (props.modalType) {
