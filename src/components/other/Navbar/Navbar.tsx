@@ -5,8 +5,13 @@ import LinkButton from "components/ui/LinkButton/LinkButton";
 import { useTranslation } from "react-i18next";
 import Button from "components/ui/Button/Button";
 import { useIsAuthenticated } from "react-auth-kit";
+import Modal from "components/modals/Modal/Modal";
 
-const Navbar = () => {
+type PropsType = {
+  openAuthModal: () => void;
+};
+
+const Navbar = (props: PropsType) => {
   const isAuthenticated = useIsAuthenticated();
   const { t } = useTranslation();
 
@@ -41,13 +46,19 @@ const Navbar = () => {
           <div className="Navbar__unauthenticatedContainer">
             <div className="Navbar__authButtonsContainer">
               <div className="Navbar__authButton">
-                <Button type={"secondary"} text={t("NAVBAR.CONNECT")} />
+                <Button
+                  type={"secondary"}
+                  text={t("NAVBAR.CONNECT")}
+                  functionality={props.openAuthModal}
+                />
               </div>
             </div>
           </div>
         )}
       </div>
       <div className="Navbar__dividerHorizontal"></div>
+
+      {/* <Modal modalType={"authentication"} buttonText={"Submit"} /> */}
     </div>
   );
 };
