@@ -1,4 +1,3 @@
-import Patterns from "components/graphics/Patterns/Patterns";
 import "./styles.scss";
 import { motion, useAnimate } from "framer-motion";
 import graphicsHomeUrl from "assets/imgs/graphics-home.png";
@@ -9,19 +8,19 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [scope, animate] = useAnimate();
+  const [animateRef, animate] = useAnimate();
 
   // Fade out the current route before navigating to the next route
   const fadeAndNavigate = (route: string, durationSecs: number) => {
-    const extraDelaySecs = 0.2;
-    animate(scope.current, { opacity: 0 }, { duration: durationSecs });
+    const extraDelaySecs = 0.5;
+    animate(animateRef.current, { opacity: 0 }, { duration: durationSecs });
     setTimeout(() => {
       navigate(route);
     }, (durationSecs + extraDelaySecs) * 1000);
   };
 
   return (
-    <div className="Home" ref={scope}>
+    <div className="Home" ref={animateRef}>
       <div className="Home__headingContainer">
         <motion.h1
           className="Home__title"
@@ -65,7 +64,6 @@ const Home = () => {
         />
       </motion.div>
 
-      <Patterns />
       <motion.div
         className="Home__graphics"
         style={{ backgroundImage: `url(${graphicsHomeUrl})` }}
