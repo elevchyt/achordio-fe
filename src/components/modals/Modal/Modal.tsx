@@ -1,5 +1,6 @@
 import "./styles.scss";
 import { motion } from "framer-motion";
+import Button from "components/ui/Button/Button";
 import { createPortal } from "react-dom";
 
 // Modal type determines the modal's layout, sizing & functionality
@@ -34,6 +35,10 @@ const Modal = (props: PropsType) => {
               Consectetur ex elit culpa voluptate tempor dolore officia mollit
               ullamco commodo mollit incididunt.
             </div>
+          </div>
+
+          <div className="Modal_submitButtonContainer">
+            <Button type={"primaryBig"} text={"OK!"} />
           </div>
 
           <div className="Modal__backdrop"></div>
