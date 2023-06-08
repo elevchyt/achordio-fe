@@ -16,7 +16,7 @@ const Home = () => {
           initial={{ x: -400 }}
           animate={{ x: 0 }}
           transition={{
-            delay: 0.3,
+            delay: 1,
             type: "spring",
             bounce: 0.3,
             stiffness: 50,
@@ -28,7 +28,7 @@ const Home = () => {
           className="Home__subtitle"
           initial={{ y: 50 }}
           animate={{ y: 0 }}
-          transition={{ delay: 2, type: "spring", bounce: 0.5, stiffness: 120 }}
+          transition={{ delay: 2.6, type: "spring", bounce: 0.5, stiffness: 120 }}
         >
           {t("HOME.SUBTITLE")}
         </motion.h2>
@@ -37,16 +37,20 @@ const Home = () => {
         className="Home__buttonSong"
         initial={{ opacity: 0, scale: 1.2, visibility: "hidden" }}
         animate={{ opacity: 1, scale: 1, visibility: "visible" }}
-        transition={{ delay: 3, type: "spring", bounce: 0.5, stiffness: 120 }}
+        transition={{ delay: 4, type: "spring", bounce: 0.5, stiffness: 120 }}
       >
         <Button type={"primaryBig"} text={t("HOME.FIND_A_SONG")} />
       </motion.div>
 
       <Patterns />
-      <div
+      <motion.div
         className="Home__graphics"
         style={{ backgroundImage: `url(${graphicsHomeUrl})` }}
-      ></div>
+        initial={{ opacity: 0, scale: 1.1, y: "100vh" }}
+        animate={{ opacity: 1, scale: 1, y: "0vh"  }}
+        // transition={{ delay: 0.2, ease: "linear", duration: 0.2 }}
+        transition={{ delay: 0.2, type: "spring", bounce: 0.5, stiffness: 120, damping: 20 }}
+      ></motion.div>
     </div>
   );
 };
