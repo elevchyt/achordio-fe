@@ -38,6 +38,9 @@
   &__menuItem {
     height: 100%;
     padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   // unauthenticated elements styling
@@ -48,7 +51,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   &__authButtonsContainer {
     height: 100%;
     display: flex;
