@@ -23,11 +23,40 @@
 
   &__window {
     width: 25%;
-    height: 45%;
+    height: 43%;
     z-index: 2;
     position: relative;
     background-color: $white;
-    border: 0.3vw solid $black;
+    border: 0.25vw solid $black;
     border-radius: 3vw;
+  }
+
+  &__header {
+    height: 12%;
+    padding: 0 38px;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.2vw solid black;
+  }
+
+  // Header elements
+  &__title {
+    font-size: 1.7em;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  &__closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  // Modal body
+  &__body {
+    display: flex;
+    height: 88%;
   }
 }
