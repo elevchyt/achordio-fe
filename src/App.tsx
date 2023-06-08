@@ -7,6 +7,7 @@ import Home from "pages/home/Home";
 import Songs from "pages/songs/Songs";
 import Artists from "pages/artists/Artists";
 import News from "pages/news/News";
+import Modal from "components/modals/Modal/Modal";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/artists" element={<Artists />} />
         <Route path="/news" element={<News />} />
       </Routes>
+      <Modal modalType={"authentication"} buttonText={"Submit"} />
       <Spinner isLoading={isLoading} />
     </div>
   );
