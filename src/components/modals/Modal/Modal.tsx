@@ -12,7 +12,10 @@ const Modal = (props: PropsType) => {
   return (
     <>
       {createPortal(
-        <div className="Modal"></div>,
+        <div className="Modal">
+          <div className="Modal__backdrop"></div>
+          <div className="Modal__window"></div>
+        </div>,
         document.getElementById("modal-portal")!
       )}
     </>
