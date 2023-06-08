@@ -13,8 +13,8 @@ const Modal = (props: PropsType) => {
     <>
       {createPortal(
         <div className="Modal">
-          <div className="Modal__backdrop"></div>
           <div className="Modal__window"></div>
+          <div className="Modal__backdrop"></div>
         </div>,
         document.getElementById("modal-portal")!
       )}
