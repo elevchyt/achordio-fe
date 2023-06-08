@@ -23,13 +23,14 @@
   }
 
   &__window {
-    width: 25%;
-    height: 43%;
+    width: 22vw;
+    height: 48%;
     z-index: 2;
     position: relative;
     background-color: $white;
     border: 0.25vw solid $black;
     border-radius: 3vw;
+    overflow: hidden;
   }
 
   &__header {
@@ -42,7 +43,7 @@
 
   // Header elements
   &__title {
-    font-size: 1.7em;
+    font-size: 1.4em;
     font-weight: bold;
     user-select: none;
   }
@@ -58,7 +59,7 @@
   // Modal body
   &__body {
     display: flex;
-    height: 88%;
+    height: 76%;
   }
 
   // Submit button container
@@ -67,5 +68,24 @@
     z-index: 2;
     height: 8%;
     margin-top: 2vh;
+  }
+
+  // Modal footer (button)
+  &__footerButton {
+    height: 10.5%;
+    padding: 0 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $red-500;
+    border-top: 0.2vw solid black;
+    cursor: pointer;
+  }
+
+  &__buttonText {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    user-select: none;
   }
 }

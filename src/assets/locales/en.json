@@ -9,5 +9,11 @@
   "HOME": {
     "SUBTITLE": "The world's largest chord chart library...",
     "FIND_A_SONG": "Find a song!"
+  },
+  "MODAL_TITLES": {
+    "CONNECT": "Connect",
+    "RATING": "Rating",
+    "CHART_VERSIONS": "Chart Revisions",
+    "COLLECTION": "Collection"
   }
 }

@@ -1,7 +1,8 @@
 import "./styles.scss";
 import { motion } from "framer-motion";
-import Button from "components/ui/Button/Button";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
 // Modal type determines the modal's layout, sizing & functionality
 type PropsType = {
@@ -10,37 +11,69 @@ type PropsType = {
 };
 
 const Modal = (props: PropsType) => {
+  const { t } = useTranslation();
+  const title = useRef<string>("Title");
+
+  // useEffect(() => {
+  //   title.current = title.current + 1;
+  // });
+
+  const modalBodyRender = () => {
+    switch (props.modalType) {
+      case "authentication":
+        title.current = t("MODAL_TITLES.CONNECT");
+        return (
+          <div className="Modal__authenticationContainer">Authentication</div>
+        );
+      case "rating":
+        title.current = t("MODAL_TITLES.RATING");
+        return <div className="Modal__ratingContainer">Rating</div>;
+      case "chartVersions":
+        title.current = t("MODAL_TITLES.CHART_VERSIONS");
+        return (
+          <div className="Modal__chartVersionContainer">Chart Versions</div>
+        );
+      case "collection":
+        title.current = t("MODAL_TITLES.COLLECTION");
+        return <div className="Modal__collectionContainer">Collection</div>;
+    }
+  };
+
   return (
     <>
       {createPortal(
         <div className="Modal">
           <div className="Modal__window">
+            {/* The modal's title and close button */}
             <div className="Modal__header">
-              <div className="Modal__title">Σύνδεση</div>
+              <div className="Modal__title">{title.current}</div>
               <motion.div
                 className="Modal__closeButton"
-                whileHover={{ rotate: "180deg" }}
+                whileHover={{ fill: "#666666" }}
+                whileTap={{ scale: 0.9 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  width="46px"
+                  width="40px"
                 >
                   <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                 </svg>
               </motion.div>
             </div>
 
-            <div className="Modal__body">
-              Consectetur ex elit culpa voluptate tempor dolore officia mollit
-              ullamco commodo mollit incididunt.
-            </div>
-          </div>
+            {/* The contents of the modal are placed here */}
+            <div className="Modal__body">{modalBodyRender()}</div>
 
-          <div className="Modal_submitButtonContainer">
-            <Button type={"primaryBig"} text={"OK!"} />
+            {/* The main button of the modal */}
+            <motion.div
+              className="Modal__footerButton"
+              whileTap={{ backgroundColor: "#fe8a8a" }}
+              whileHover={{ backgroundColor: "#fe0707" }}
+            >
+              <div className="Modal__buttonText">{props.buttonText}</div>
+            </motion.div>
           </div>
-
           <div className="Modal__backdrop"></div>
         </div>,
         document.getElementById("modal-portal")!
