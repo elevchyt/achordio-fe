@@ -15,9 +15,16 @@
     text-decoration: none;
     font-weight: bold;
     user-select: none;
+    transition: transform .2s;
 
     &--active {
+      font-size: 1.7em;
+      color: $black;
+      text-decoration: none;
+      font-weight: bold;
+      user-select: none;
       color: $red-500;
+      transform: translateY(-4px) rotate(-4deg);
     }
   }
 }

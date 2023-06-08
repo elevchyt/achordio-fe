@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import "./styles.scss";
-import { Link } from "react-router-dom";
-import { redirect } from "utils/genericUtils";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 type PropsType = {
@@ -23,12 +22,18 @@ const LinkButton = (props: PropsType) => {
       onClick={() => {
         navigate(props.link);
       }}
+      variants={linkVariants}
       whileTap="click"
       whileHover="hover"
     >
-      <motion.a className="LinkButton__link" variants={linkVariants}>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "LinkButton__link--active" : "LinkButton__link"
+        }
+        to={props.link}
+      >
         {props.text}
-      </motion.a>
+      </NavLink>
     </motion.li>
   );
 };
