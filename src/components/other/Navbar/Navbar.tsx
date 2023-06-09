@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles.scss";
 import Logo from "components/ui/Logo/Logo";
 import LinkButton from "components/ui/LinkButton/LinkButton";
@@ -6,14 +6,12 @@ import { useTranslation } from "react-i18next";
 import Button from "components/ui/Button/Button";
 import { useIsAuthenticated } from "react-auth-kit";
 import Modal from "components/modals/Modal/Modal";
+import { ModalContext } from "context/ModalContext";
 
-type PropsType = {
-  openAuthModal: () => void;
-};
-
-const Navbar = (props: PropsType) => {
+const Navbar = () => {
   const isAuthenticated = useIsAuthenticated();
   const { t } = useTranslation();
+  const { isOpen, setIsOpen } = useContext(ModalContext);
 
   return (
     <div className="Navbar">
@@ -49,7 +47,9 @@ const Navbar = (props: PropsType) => {
                 <Button
                   type={"secondary"}
                   text={t("NAVBAR.CONNECT")}
-                  functionality={props.openAuthModal}
+                  functionality={() => {
+                    setIsOpen(true);
+                  }}
                 />
               </div>
             </div>
@@ -58,7 +58,9 @@ const Navbar = (props: PropsType) => {
       </div>
       <div className="Navbar__dividerHorizontal"></div>
 
-      {/* <Modal modalType={"authentication"} buttonText={"Submit"} /> */}
+      {isOpen ? (
+        <Modal modalType={"authentication"} buttonText={"Submit"} />
+      ) : null}
     </div>
   );
 };
