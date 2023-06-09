@@ -1,7 +1,7 @@
 import { ModalContext } from "context/ModalContext";
 import "./styles.scss";
 import { motion } from "framer-motion";
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 
@@ -42,7 +42,12 @@ const Modal = (props: PropsType) => {
       {isOpen
         ? createPortal(
             <div className="Modal">
-              <div className="Modal__window">
+              <motion.div
+                className="Modal__window"
+                initial={{ y: "-100vh" }}
+                animate={{ y: "0" }}
+                transition={{ type: "spring", stiffness: 80, duration: 0.5 }}
+              >
                 {/* The modal's title and close button */}
                 <div className="Modal__header">
                   <div className="Modal__title">{title.current}</div>
@@ -75,7 +80,7 @@ const Modal = (props: PropsType) => {
                 >
                   <div className="Modal__buttonText">{props.buttonText}</div>
                 </motion.div>
-              </div>
+              </motion.div>
               <div
                 className="Modal__backdrop"
                 onClick={() => {
