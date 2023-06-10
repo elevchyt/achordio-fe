@@ -15,5 +15,11 @@
     "RATING": "Rating",
     "CHART_VERSIONS": "All version",
     "COLLECTION": "Collection"
+  },
+  "LOGIN_FORM": {
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Password",
+    "ENTER_EMAIL": "Email",
+    "ENTER_PASSWORD": "Password"
   }
 }

@@ -15,5 +15,11 @@
     "RATING": "Βαθμολογία",
     "CHART_VERSIONS": "Όλες οι εκδοχές",
     "COLLECTION": "Συλλογή"
+  },
+  "LOGIN_FORM": {
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Κωδικός",
+    "ENTER_EMAIL": "Διεύθυνση email",
+    "ENTER_PASSWORD": "Κωδικός πρόσβασης"
   }
 }

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useContext, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
+import LoginForm from "components/form/LoginForm/LoginForm";
 
 // Modal type determines the modal's layout, sizing & functionality
 type PropsType = {
@@ -22,7 +23,9 @@ const Modal = (props: PropsType) => {
       case "authentication":
         title.current = t("MODAL_TITLES.CONNECT");
         return (
-          <div className="Modal__authenticationContainer">Authentication</div>
+          <>
+            <LoginForm />
+          </>
         );
       case "rating":
         title.current = t("MODAL_TITLES.RATING");

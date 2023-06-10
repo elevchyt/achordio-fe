@@ -13,7 +13,13 @@ const FormInput: React.FC<FormFieldProps> = ({
 }) => {
   return (
     <div className="FormInput">
-      <input {...field} {...props} type={type} />
+      <input
+        className="FormInput__input"
+        {...field}
+        {...props}
+        type={type}
+        spellCheck="false"
+      />
       {/* <ErrorMessage name={field.name} component="div" /> */}
     </div>
   );
