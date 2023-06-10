@@ -58,6 +58,7 @@ const Home = () => {
         <Button
           type={"primaryBig"}
           text={t("HOME.FIND_A_SONG")}
+          isDisabled={false}
           functionality={() => {
             fadeAndNavigate("/songs", 1);
           }}

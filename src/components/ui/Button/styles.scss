@@ -42,4 +42,11 @@
     user-select: none;
     cursor: pointer;
   }
+
+  &--disabled {
+    background-color: $grey-600;
+    color: $white;
+    border: 3px solid $grey-600;
+    cursor: default;
+  }
 }

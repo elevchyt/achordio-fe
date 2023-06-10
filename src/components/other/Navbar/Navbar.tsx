@@ -35,7 +35,11 @@ const Navbar = () => {
         {isAuthenticated() ? (
           <div className="Navbar__authenticatedContainer">
             <div className="Navbar__authButton">
-              <Button type={"secondary"} text={t("NAVBAR.CREATE")} />
+              <Button
+                type={"secondary"}
+                text={t("NAVBAR.CREATE")}
+                isDisabled={false}
+              />
             </div>
             <div className="Navbar__dividerVertical"></div>
             <div className="Navbar__profileContainer"></div>
@@ -47,6 +51,7 @@ const Navbar = () => {
                 <Button
                   type={"secondary"}
                   text={t("NAVBAR.CONNECT")}
+                  isDisabled={false}
                   functionality={() => {
                     setIsOpen(true);
                   }}
