@@ -61,7 +61,7 @@ const Modal = (props: PropsType) => {
                     }}
                     className="Modal__closeButton"
                     whileHover={{ fill: "#666666", rotate: "-4deg" }}
-                    whileTap={{ scale: 0.9, rotate: "7deg" }}
+                    whileTap={{ fill: "#acacac", scale: 0.9, rotate: "7deg" }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
