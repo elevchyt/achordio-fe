@@ -88,4 +88,10 @@
     font-weight: bold;
     user-select: none;
   }
+
+  &--disabledFooterButton {
+    background-color: $grey-600;
+    color: $white;
+    cursor: default;
+  }
 }

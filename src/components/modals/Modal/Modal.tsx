@@ -15,6 +15,7 @@ const Modal = (props: PropsType) => {
   const { t } = useTranslation();
   const title = useRef<string>("Title");
   const { isOpen, setIsOpen } = useContext(ModalContext);
+  const { isButtonDisabled, setIsButtonDisabled } = useContext(ModalContext);
 
   const modalBodyRender = () => {
     switch (props.modalType) {
@@ -74,9 +75,15 @@ const Modal = (props: PropsType) => {
 
                 {/* The main button of the modal */}
                 <motion.div
-                  className="Modal__footerButton"
-                  whileTap={{ backgroundColor: "#fe8a8a" }}
-                  whileHover={{ backgroundColor: "#fe0707" }}
+                  className={`Modal__footerButton ${
+                    isButtonDisabled ? "Modal--disabledFooterButton" : ""
+                  }`}
+                  whileTap={
+                    !isButtonDisabled ? { backgroundColor: "#fe8a8a" } : {}
+                  }
+                  whileHover={
+                    !isButtonDisabled ? { backgroundColor: "#fe0707" } : {}
+                  }
                 >
                   <div className="Modal__buttonText">{props.buttonText}</div>
                 </motion.div>

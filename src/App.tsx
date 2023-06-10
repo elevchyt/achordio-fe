@@ -12,11 +12,19 @@ import { ModalContext } from "context/ModalContext";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState<boolean>(false); // The getter & setter data for modal context
+  const [isOpen, setIsOpen] = useState<boolean>(false); // The getter & setter data for modal context's open/closed state
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false); // The getter & setter data for modal context's button state
 
   return (
     <div className="App">
-      <ModalContext.Provider value={{ isOpen: isOpen, setIsOpen: setIsOpen }}>
+      <ModalContext.Provider
+        value={{
+          isOpen: isOpen,
+          setIsOpen: setIsOpen,
+          isButtonDisabled: isButtonDisabled,
+          setIsButtonDisabled: setIsButtonDisabled,
+        }}
+      >
         <NavbarVM />
         <Routes>
           <Route path="/" element={<Home />} />
