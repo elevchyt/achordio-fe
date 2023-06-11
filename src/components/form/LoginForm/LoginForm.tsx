@@ -4,26 +4,31 @@ import "./styles.scss";
 import { Formik, Form, Field, FieldProps, ErrorMessage } from "formik";
 import { motion } from "framer-motion";
 import googleLogoUrl from "assets/imgs/google-logo.png";
-import { forwardRef, useImperativeHandle } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 
 const LoginForm = forwardRef((props, ref) => {
+  const { t } = useTranslation();
+  const formRef = useRef<any>(null);
   useImperativeHandle(ref, () => ({
     submit: () => {
-      submitForm();
+      if (formRef.current) {
+        formRef.current.submitForm();
+      }
     },
   }));
-  const { t } = useTranslation();
 
-  const submitForm = () => {
+  const onSubmitForm = (formValues: Object) => {
     console.log("submitted form!!!");
+    console.log(formValues);
   };
 
   return (
     <div className="LoginForm">
       <Formik
-        initialValues={{ email: "" }}
-        onSubmit={() => {
-          submitForm();
+        innerRef={formRef}
+        initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => {
+          onSubmitForm(values);
         }}
       >
         <Form className="LoginForm__form">
