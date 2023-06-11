@@ -17,6 +17,11 @@ const Modal = (props: PropsType) => {
   const title = useRef<string>("Title");
   const { isOpen, setIsOpen } = useContext(ModalContext);
   const { isButtonDisabled, setIsButtonDisabled } = useContext(ModalContext);
+  const bodyComponentRef = useRef<any>();
+
+  const handleButtonClick = () => {
+    bodyComponentRef.current.submit();
+  };
 
   const modalBodyRender = () => {
     switch (props.modalType) {
@@ -24,7 +29,7 @@ const Modal = (props: PropsType) => {
         title.current = t("MODAL_TITLES.CONNECT");
         return (
           <>
-            <LoginForm />
+            <LoginForm ref={bodyComponentRef} />
           </>
         );
       case "rating":
@@ -38,16 +43,6 @@ const Modal = (props: PropsType) => {
       case "collection":
         title.current = t("MODAL_TITLES.COLLECTION");
         return <div className="Modal__collectionContainer">Collection</div>;
-    }
-  };
-
-  // THIS WILL BE MOVED TO THE VIEWMODEL!
-  const handleSubmit = () => {
-    switch (props.modalType) {
-      case "authentication":
-        // submitForm();
-        console.log('auth submit')
-        break;
     }
   };
 
@@ -97,7 +92,7 @@ const Modal = (props: PropsType) => {
                   whileHover={
                     !isButtonDisabled ? { backgroundColor: "#fe0707" } : {}
                   }
-                  onClick={handleSubmit}
+                  onClick={handleButtonClick}
                 >
                   <div className="Modal__buttonText">{props.buttonText}</div>
                 </motion.div>

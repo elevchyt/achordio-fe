@@ -4,16 +4,26 @@ import "./styles.scss";
 import { Formik, Form, Field, FieldProps, ErrorMessage } from "formik";
 import { motion } from "framer-motion";
 import googleLogoUrl from "assets/imgs/google-logo.png";
+import { forwardRef, useImperativeHandle } from "react";
 
-const LoginForm = () => {
+const LoginForm = forwardRef((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    submit: () => {
+      submitForm();
+    },
+  }));
   const { t } = useTranslation();
+
+  const submitForm = () => {
+    console.log("submitted form!!!");
+  };
 
   return (
     <div className="LoginForm">
       <Formik
         initialValues={{ email: "" }}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={() => {
+          submitForm();
         }}
       >
         <Form className="LoginForm__form">
@@ -75,6 +85,6 @@ const LoginForm = () => {
       </Formik>
     </div>
   );
-};
+});
 
 export default LoginForm;
