@@ -69,7 +69,13 @@ const LoginForm = () => {
             </div>
           </div>
           {/* Create Account */}
-          <div className="LoginForm__createAccount"></div>
+          <motion.div
+            className="LoginForm__createAccount"
+            whileHover={{ color: "#fe3c3c" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Δημιούργησε έναν λογαριασμό!
+          </motion.div>
         </Form>
       </Formik>
     </div>
