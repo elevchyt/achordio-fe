@@ -63,8 +63,7 @@ const LoginForm = () => {
               <motion.div
                 className="LoginForm__googleLogo"
                 style={{ backgroundImage: `url(${googleLogoUrl})` }}
-                whileHover={{ rotate: "4deg" }}
-                whileTap={{ rotate: "-8deg", scale: 0.9 }}
+                whileTap={{ opacity: 0.5 }}
               ></motion.div>
             </div>
           </div>
