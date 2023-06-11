@@ -86,6 +86,9 @@ const LoginForm = forwardRef((props, ref) => {
           >
             {t("LOGIN_FORM.CREATE_ACCOUNT")}
           </motion.div>
+
+          {/* Submit Button (always hidden - exists only to handle 'Enter' keypresses for form submission) */}
+          <button type="submit" className="hidden">Submit</button>
         </Form>
       </Formik>
     </div>
