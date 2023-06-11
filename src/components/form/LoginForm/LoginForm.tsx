@@ -5,10 +5,6 @@ import { Formik, Form, Field, FieldProps, ErrorMessage } from "formik";
 import { motion } from "framer-motion";
 import googleLogoUrl from "assets/imgs/google-logo.png";
 
-interface FormFieldProps extends FieldProps {
-  type: string;
-}
-
 const LoginForm = () => {
   const { t } = useTranslation();
 
@@ -57,7 +53,7 @@ const LoginForm = () => {
               whileHover={{ color: "#fe8a8a" }}
               whileTap={{ scale: 0.95 }}
             >
-              Ξεχάσατε τον κωδικό;
+              {t("LOGIN_FORM.FORGOT_PASSWORD")}
             </motion.div>
             <div className="LoginForm__authMethods">
               <motion.div
@@ -73,7 +69,7 @@ const LoginForm = () => {
             whileHover={{ color: "#fe3c3c" }}
             whileTap={{ scale: 0.95 }}
           >
-            Δημιούργησε έναν λογαριασμό!
+            {t("LOGIN_FORM.CREATE_ACCOUNT")}
           </motion.div>
         </Form>
       </Formik>

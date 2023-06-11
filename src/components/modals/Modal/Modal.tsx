@@ -41,6 +41,16 @@ const Modal = (props: PropsType) => {
     }
   };
 
+  // THIS WILL BE MOVED TO THE VIEWMODEL!
+  const handleSubmit = () => {
+    switch (props.modalType) {
+      case "authentication":
+        // submitForm();
+        console.log('auth submit')
+        break;
+    }
+  };
+
   return (
     <>
       {isOpen
@@ -87,6 +97,7 @@ const Modal = (props: PropsType) => {
                   whileHover={
                     !isButtonDisabled ? { backgroundColor: "#fe0707" } : {}
                   }
+                  onClick={handleSubmit}
                 >
                   <div className="Modal__buttonText">{props.buttonText}</div>
                 </motion.div>

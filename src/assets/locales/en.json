@@ -20,6 +20,8 @@
     "EMAIL": "E-Mail",
     "PASSWORD": "Password",
     "ENTER_EMAIL": "Email",
-    "ENTER_PASSWORD": "Password"
+    "ENTER_PASSWORD": "Password",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "CREATE_ACCOUNT": "Create an account!"
   }
 }

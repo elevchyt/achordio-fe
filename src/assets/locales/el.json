@@ -20,6 +20,8 @@
     "EMAIL": "E-Mail",
     "PASSWORD": "Κωδικός",
     "ENTER_EMAIL": "Διεύθυνση email",
-    "ENTER_PASSWORD": "Κωδικός πρόσβασης"
+    "ENTER_PASSWORD": "Κωδικός πρόσβασης",
+    "FORGOT_PASSWORD": "Ξεχάσατε τον κώδικο;",
+    "CREATE_ACCOUNT": "Δημιούργησε έναν λογαριασμό!"
   }
 }
