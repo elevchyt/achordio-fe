@@ -5,8 +5,10 @@ import { Formik, Form, Field, FieldProps, ErrorMessage } from "formik";
 import { motion } from "framer-motion";
 import googleLogoUrl from "assets/imgs/google-logo.png";
 import { forwardRef, useImperativeHandle, useRef } from "react";
+import LoginFormVM from "./LoginFormVM";
 
 const LoginForm = forwardRef((props, ref) => {
+  const { onSubmitForm } = LoginFormVM();
   const { t } = useTranslation();
   const formRef = useRef<any>(null);
   useImperativeHandle(ref, () => ({
@@ -16,11 +18,6 @@ const LoginForm = forwardRef((props, ref) => {
       }
     },
   }));
-
-  const onSubmitForm = (formValues: Object) => {
-    console.log("submitted form!!!");
-    console.log(formValues);
-  };
 
   return (
     <div className="LoginForm">
@@ -88,7 +85,9 @@ const LoginForm = forwardRef((props, ref) => {
           </motion.div>
 
           {/* Submit Button (always hidden - exists only to handle 'Enter' keypresses for form submission) */}
-          <button type="submit" className="hidden">Submit</button>
+          <button type="submit" className="hidden">
+            Submit
+          </button>
         </Form>
       </Formik>
     </div>
