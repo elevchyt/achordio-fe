@@ -17,7 +17,8 @@ root.render(
       authType={"cookie"}
       authName={"_auth"}
       cookieDomain={window.location.hostname}
-      cookieSecure={window.location.protocol === "https:"}
+      // cookieSecure={window.location.protocol === "https:"}
+      cookieSecure={false}
     >
       <I18nextProvider i18n={i18n}>
         <BrowserRouter>

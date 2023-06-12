@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import axios from "api";
+import { useSignIn } from "react-auth-kit";
 
 type LoginFormValues = {
   email: string;
@@ -7,10 +8,15 @@ type LoginFormValues = {
 };
 
 const LoginFormVM = () => {
+  const signIn = useSignIn();
+
+  // Submit Login Form logic
   const onSubmitForm = useCallback((formValues: LoginFormValues) => {
     console.log("submitted form!!!");
     console.log(formValues);
-    axios.get('test-endpoint')
+    axios.post("v1/api/login", formValues).then((res) => {
+      console.log(res);
+    });
   }, []);
 
   return {
