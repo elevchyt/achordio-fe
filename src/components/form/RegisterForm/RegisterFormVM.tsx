@@ -12,21 +12,24 @@ const RegisterFormVM = () => {
 
   // Submit Register Form logic
   const onSubmitForm = useCallback((formValues: RegisterFormValues) => {
-    console.log("submitted form!!!");
-    console.log(formValues);
-    axios.post("v1/api/user-register", formValues).then((res) => {
-      // Store authentication cookie
-      const dayInSeconds = 86400;
-      signIn({
-        token: res.data.token,
-        expiresIn: dayInSeconds * 60, // cookie expires in two months (60 days)
-        tokenType: "Bearer",
-        authState: { email: formValues.email },
-      });
+    axios
+      .post("v1/api/user-register", formValues)
+      .then((res) => {
+        // Store authentication cookie
+        const dayInSeconds = 86400;
+        signIn({
+          token: res.data.token,
+          expiresIn: dayInSeconds * 60, // cookie expires in two months (60 days)
+          tokenType: "Bearer",
+          authState: { email: formValues.email },
+        });
 
-      // Refresh page after successful registration & authentication
-      window.location.reload();
-    });
+        // Refresh page after successful registration & authentication
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return {

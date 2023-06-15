@@ -1,0 +1,12 @@
+@import "assets/colors.scss";
+
+.FormErrorMessage {
+  width: 100%;
+  height: 100%;
+
+  &__error {
+    font-size: 0.9em;
+    text-align: center;
+    color: red;
+  }
+}

@@ -29,6 +29,11 @@
     "ENTER_EMAIL": "Διεύθυνση email",
     "ENTER_PASSWORD": "Κωδικός πρόσβασης",
     "FORGOT_PASSWORD": "Ξεχάσατε τον κώδικο;",
-    "CREATE_ACCOUNT": "Δημιούργησε έναν λογαριασμό!"
+    "CREATE_ACCOUNT": "Δημιούργησε έναν λογαριασμό!",
+    "EMAIL_REQUIRED_ERROR": "* Το πεδίο email είναι υποχρεωτικό!",
+    "PASSWORD_REQUIRED_ERROR": "* Το πεδίο κωδικού είναι υποχρεωτικό!",
+    "INVALID_EMAIL_ERROR": "* Λάθος διεύθυνση email",
+    "PASSWORD_MIN_CHARACTERS": "* Ο κωδικός πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες!",
+    "PASSWORD_FORMAT_ERROR": "* Ο κωδικός πρέπει να έχει κεφαλαία και μικρά γράμματα και τουλάχιστον έναν αριθμό."
   }
 }

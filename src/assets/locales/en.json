@@ -29,6 +29,11 @@
     "ENTER_EMAIL": "Email",
     "ENTER_PASSWORD": "Password",
     "FORGOT_PASSWORD": "Forgot password?",
-    "CREATE_ACCOUNT": "Create an account!"
+    "CREATE_ACCOUNT": "Create an account!",
+    "EMAIL_REQUIRED_ERROR": "* E-Mail is required!",
+    "PASSWORD_REQUIRED_ERROR": "* Password is required!",
+    "INVALID_EMAIL_ERROR": "* Invalid E-Mail address",
+    "PASSWORD_MIN_CHARACTERS": "* Password must contain at least 8 characters!",
+    "PASSWORD_FORMAT_ERROR": "* Password must have lowercase and uppercase letters and at least one number."
   }
 }
