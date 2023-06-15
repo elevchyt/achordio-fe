@@ -14,7 +14,7 @@ const RegisterFormVM = () => {
   const onSubmitForm = useCallback((formValues: RegisterFormValues) => {
     console.log("submitted form!!!");
     console.log(formValues);
-    axios.post("v1/api/register", formValues).then((res) => {
+    axios.post("v1/api/user-register", formValues).then((res) => {
       // Store authentication cookie
       const dayInSeconds = 86400;
       signIn({
