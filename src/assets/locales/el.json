@@ -17,6 +17,10 @@
     "CHART_VERSIONS": "Όλες οι εκδοχές",
     "COLLECTION": "Συλλογή"
   },
+  "MODAL": {
+    "SUBMIT": "Υποβολή",
+    "OK": "OK"
+  },
   "LOGIN_FORM": {
     "EMAIL": "E-Mail",
     "PASSWORD": "Κωδικός",

@@ -8,13 +8,19 @@ import LoginForm from "components/form/LoginForm/LoginForm";
 
 // Modal type determines the modal's layout, sizing & functionality
 type PropsType = {
-  modalType: "empty" | "login" | "register" | "rating" | "chartVersions" | "collection";
-  buttonText: string;
+  modalType:
+    | "empty"
+    | "login"
+    | "register"
+    | "rating"
+    | "chartVersions"
+    | "collection";
 };
 
 const Modal = (props: PropsType) => {
   const { t } = useTranslation();
   const title = useRef<string>("Title");
+  const buttonText = useRef<string>("OK");
   const { isOpen, setIsOpen } = useContext(ModalContext);
   const { isButtonDisabled, setIsButtonDisabled } = useContext(ModalContext);
   const { modalType, setModalType } = useContext(ModalContext);
@@ -23,9 +29,9 @@ const Modal = (props: PropsType) => {
   // On component mount, set the desired modal body type from the props
   useEffect(() => {
     setModalType(props.modalType);
-  }, []);
+  }, [props.modalType]);
 
-  // All components that can be rendered inside the modal body must contain a submit() function
+  // All components that can be rendered inside the modal's body must contain a submit() function
   const handleButtonClick = () => {
     bodyComponentRef.current.submit();
   };
@@ -34,6 +40,7 @@ const Modal = (props: PropsType) => {
     switch (modalType) {
       case "login":
         title.current = t("MODAL_TITLES.CONNECT");
+        buttonText.current = t("MODAL.SUBMIT");
         return (
           <>
             <LoginForm ref={bodyComponentRef} />
@@ -41,6 +48,7 @@ const Modal = (props: PropsType) => {
         );
       case "register":
         title.current = t("MODAL_TITLES.REGISTER");
+        buttonText.current = t("MODAL.SUBMIT");
         return <div className="Modal__registerContainer">Register</div>;
       case "rating":
         title.current = t("MODAL_TITLES.RATING");
@@ -104,7 +112,7 @@ const Modal = (props: PropsType) => {
                   }
                   onClick={handleButtonClick}
                 >
-                  <div className="Modal__buttonText">{props.buttonText}</div>
+                  <div className="Modal__buttonText">{buttonText.current}</div>
                 </motion.div>
               </motion.div>
               <div

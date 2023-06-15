@@ -17,6 +17,10 @@
     "CHART_VERSIONS": "All version",
     "COLLECTION": "Collection"
   },
+  "MODAL": {
+    "SUBMIT": "Submit",
+    "OK": "OK"
+  },
   "LOGIN_FORM": {
     "EMAIL": "E-Mail",
     "PASSWORD": "Password",

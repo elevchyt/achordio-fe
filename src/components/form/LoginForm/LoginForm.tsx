@@ -22,7 +22,6 @@ const LoginForm = forwardRef((props, ref) => {
   }));
 
   const goToRegisterForm = () => {
-    console.log('changing modal body to register...');
     setModalType("register");
   };
 

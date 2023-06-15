@@ -65,7 +65,7 @@ const Navbar = () => {
       <div className="Navbar__dividerHorizontal"></div>
 
       {isOpen ? (
-        <Modal modalType={"login"} buttonText={"Submit"} />
+        <Modal modalType={"login"}/>
       ) : null}
     </div>
   );
