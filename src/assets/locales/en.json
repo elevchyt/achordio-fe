@@ -19,6 +19,8 @@
   },
   "MODAL": {
     "SUBMIT": "Submit",
+    "CONNECT": "Connect",
+    "REGISTER": "Register!",
     "OK": "OK"
   },
   "AUTH_FORMS": {

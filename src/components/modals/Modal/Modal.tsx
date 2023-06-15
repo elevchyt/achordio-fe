@@ -32,7 +32,7 @@ const Modal = (props: PropsType) => {
     setModalType(props.modalType);
   }, [props.modalType]);
 
-  // All components that can be rendered inside the modal's body must contain a submit() function
+  // All components that can be rendered inside the modal's body must contain a submit() function!
   const handleButtonClick = () => {
     bodyComponentRef.current.submit();
   };
@@ -41,7 +41,7 @@ const Modal = (props: PropsType) => {
     switch (modalType) {
       case "login":
         title.current = t("MODAL_TITLES.CONNECT");
-        buttonText.current = t("MODAL.SUBMIT");
+        buttonText.current = t("MODAL.CONNECT");
         return (
           <>
             <LoginForm ref={bodyComponentRef} />
@@ -49,7 +49,7 @@ const Modal = (props: PropsType) => {
         );
       case "register":
         title.current = t("MODAL_TITLES.REGISTER");
-        buttonText.current = t("MODAL.SUBMIT");
+        buttonText.current = t("MODAL.REGISTER");
         return (
           <>
             <RegisterForm ref={bodyComponentRef} />

@@ -19,6 +19,8 @@
   },
   "MODAL": {
     "SUBMIT": "Υποβολή",
+    "CONNECT": "Σύνδεση",
+    "REGISTER": "Εγγραφή!",
     "OK": "OK"
   },
   "AUTH_FORMS": {
