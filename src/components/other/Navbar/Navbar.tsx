@@ -12,6 +12,7 @@ const Navbar = () => {
   const isAuthenticated = useIsAuthenticated();
   const { t } = useTranslation();
   const { isOpen, setIsOpen } = useContext(ModalContext);
+  const { modalType, setModalType } = useContext(ModalContext);
 
   return (
     <div className="Navbar">
@@ -64,7 +65,7 @@ const Navbar = () => {
       <div className="Navbar__dividerHorizontal"></div>
 
       {isOpen ? (
-        <Modal modalType={"authentication"} buttonText={"Submit"} />
+        <Modal modalType={"login"} buttonText={"Submit"} />
       ) : null}
     </div>
   );

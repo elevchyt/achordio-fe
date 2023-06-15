@@ -12,6 +12,7 @@
   },
   "MODAL_TITLES": {
     "CONNECT": "Connect",
+    "REGISTER": "Register",
     "RATING": "Rating",
     "CHART_VERSIONS": "All version",
     "COLLECTION": "Collection"

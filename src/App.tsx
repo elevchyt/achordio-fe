@@ -14,6 +14,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false); // The getter & setter data for modal context's open/closed state
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false); // The getter & setter data for modal context's button state
+  const [modalType, setModalType] = useState<string>("login"); // The getter & setter data for modal context's modal type
 
   return (
     <div className="App">
@@ -23,6 +24,8 @@ const App = () => {
           setIsOpen: setIsOpen,
           isButtonDisabled: isButtonDisabled,
           setIsButtonDisabled: setIsButtonDisabled,
+          modalType: modalType,
+          setModalType: setModalType,
         }}
       >
         <NavbarVM />

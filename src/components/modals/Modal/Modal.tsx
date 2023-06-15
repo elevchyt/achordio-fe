@@ -1,14 +1,14 @@
 import { ModalContext } from "context/ModalContext";
 import "./styles.scss";
 import { motion } from "framer-motion";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import LoginForm from "components/form/LoginForm/LoginForm";
 
 // Modal type determines the modal's layout, sizing & functionality
 type PropsType = {
-  modalType: "authentication" | "rating" | "chartVersions" | "collection";
+  modalType: "empty" | "login" | "register" | "rating" | "chartVersions" | "collection";
   buttonText: string;
 };
 
@@ -17,21 +17,31 @@ const Modal = (props: PropsType) => {
   const title = useRef<string>("Title");
   const { isOpen, setIsOpen } = useContext(ModalContext);
   const { isButtonDisabled, setIsButtonDisabled } = useContext(ModalContext);
+  const { modalType, setModalType } = useContext(ModalContext);
   const bodyComponentRef = useRef<any>();
 
+  // On component mount, set the desired modal body type from the props
+  useEffect(() => {
+    setModalType(props.modalType);
+  }, []);
+
+  // All components that can be rendered inside the modal body must contain a submit() function
   const handleButtonClick = () => {
     bodyComponentRef.current.submit();
   };
 
   const modalBodyRender = () => {
-    switch (props.modalType) {
-      case "authentication":
+    switch (modalType) {
+      case "login":
         title.current = t("MODAL_TITLES.CONNECT");
         return (
           <>
             <LoginForm ref={bodyComponentRef} />
           </>
         );
+      case "register":
+        title.current = t("MODAL_TITLES.REGISTER");
+        return <div className="Modal__registerContainer">Register</div>;
       case "rating":
         title.current = t("MODAL_TITLES.RATING");
         return <div className="Modal__ratingContainer">Rating</div>;

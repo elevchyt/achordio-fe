@@ -4,12 +4,14 @@ import "./styles.scss";
 import { Formik, Form, Field, FieldProps, ErrorMessage } from "formik";
 import { motion } from "framer-motion";
 import googleLogoUrl from "assets/imgs/google-logo.png";
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
 import LoginFormVM from "./LoginFormVM";
+import { ModalContext } from "context/ModalContext";
 
 const LoginForm = forwardRef((props, ref) => {
-  const { onSubmitForm } = LoginFormVM();
   const { t } = useTranslation();
+  const { onSubmitForm } = LoginFormVM();
+  const { modalType, setModalType } = useContext(ModalContext);
   const formRef = useRef<any>(null);
   useImperativeHandle(ref, () => ({
     submit: () => {
@@ -18,6 +20,11 @@ const LoginForm = forwardRef((props, ref) => {
       }
     },
   }));
+
+  const goToRegisterForm = () => {
+    console.log('changing modal body to register...');
+    setModalType("register");
+  };
 
   return (
     <div className="LoginForm">
@@ -80,6 +87,7 @@ const LoginForm = forwardRef((props, ref) => {
             className="LoginForm__createAccount"
             whileHover={{ color: "#fe3c3c" }}
             whileTap={{ scale: 0.95 }}
+            onClick={goToRegisterForm}
           >
             {t("LOGIN_FORM.CREATE_ACCOUNT")}
           </motion.div>
