@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import LoginForm from "components/form/LoginForm/LoginForm";
+import RegisterForm from "components/form/RegisterForm/RegisterForm";
 
 // Modal type determines the modal's layout, sizing & functionality
 type PropsType = {
@@ -49,7 +50,11 @@ const Modal = (props: PropsType) => {
       case "register":
         title.current = t("MODAL_TITLES.REGISTER");
         buttonText.current = t("MODAL.SUBMIT");
-        return <div className="Modal__registerContainer">Register</div>;
+        return (
+          <>
+            <RegisterForm ref={bodyComponentRef} />
+          </>
+        );
       case "rating":
         title.current = t("MODAL_TITLES.RATING");
         return <div className="Modal__ratingContainer">Rating</div>;

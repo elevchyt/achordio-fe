@@ -21,7 +21,7 @@
     "SUBMIT": "Submit",
     "OK": "OK"
   },
-  "LOGIN_FORM": {
+  "AUTH_FORMS": {
     "EMAIL": "E-Mail",
     "PASSWORD": "Password",
     "ENTER_EMAIL": "Email",
