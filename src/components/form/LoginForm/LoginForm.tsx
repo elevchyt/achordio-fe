@@ -1,9 +1,7 @@
 import { useTranslation } from "react-i18next";
 import FormInput from "../FormInput/FormInput";
-import FormErrorMessage from "../FormErrorMessage/FormErrorMessage";
 import "./styles.scss";
 import { Formik, Form, Field, FieldProps, ErrorMessage } from "formik";
-import * as Yup from "yup";
 import { motion } from "framer-motion";
 import googleLogoUrl from "assets/imgs/google-logo.png";
 import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
@@ -40,20 +38,6 @@ const LoginForm = forwardRef((props, ref) => {
         onSubmit={(values) => {
           onSubmitForm(values);
         }}
-        validateOnChange={false}
-        validateOnBlur={false}
-        validationSchema={Yup.object({
-          email: Yup.string()
-            .email(t("AUTH_FORMS.INVALID_EMAIL_ERROR")!)
-            .required(t("AUTH_FORMS.EMAIL_REQUIRED_ERROR")!),
-          password: Yup.string()
-            .min(8, t("AUTH_FORMS.PASSWORD_MIN_CHARACTERS")!)
-            .matches(
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$/,
-              t("AUTH_FORMS.PASSWORD_FORMAT_ERROR")!
-            )
-            .required(t("AUTH_FORMS.PASSWORD_REQUIRED_ERROR")!),
-        })}
       >
         <Form className="LoginForm__form">
           {/* E-Mail */}
@@ -61,9 +45,6 @@ const LoginForm = forwardRef((props, ref) => {
             <label className="LoginForm__label" htmlFor="email">
               {t("AUTH_FORMS.EMAIL")}
             </label>
-            <div className="LoginForm__errorMessage">
-              <ErrorMessage name="email" component={FormErrorMessage} />
-            </div>
             <div className="LoginForm__inputFieldContainer">
               <Field
                 component={FormInput}
@@ -78,9 +59,6 @@ const LoginForm = forwardRef((props, ref) => {
             <label className="LoginForm__label" htmlFor="password">
               {t("AUTH_FORMS.PASSWORD")}
             </label>
-            <div className="LoginForm__errorMessage">
-              <ErrorMessage name="password" component={FormErrorMessage} />
-            </div>
             <div className="LoginForm__inputFieldContainer">
               <Field
                 component={FormInput}
