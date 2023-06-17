@@ -34,7 +34,9 @@ const Modal = (props: PropsType) => {
 
   // All components that can be rendered inside the modal's body must contain a submit() function!
   const handleButtonClick = () => {
-    bodyComponentRef.current.submit();
+    if (!isButtonDisabled) {
+      bodyComponentRef.current.submit();
+    }
   };
 
   const modalBodyRender = () => {
@@ -107,14 +109,8 @@ const Modal = (props: PropsType) => {
                 {/* The main button of the modal */}
                 <motion.div
                   className={`Modal__footerButton ${
-                    isButtonDisabled ? "Modal--disabledFooterButton" : ""
+                    isButtonDisabled ? "Modal__footerButton--disabled" : ""
                   }`}
-                  whileTap={
-                    !isButtonDisabled ? { backgroundColor: "#fe8a8a" } : {}
-                  }
-                  whileHover={
-                    !isButtonDisabled ? { backgroundColor: "#fe0707" } : {}
-                  }
                   onClick={handleButtonClick}
                 >
                   <div className="Modal__buttonText">{buttonText.current}</div>

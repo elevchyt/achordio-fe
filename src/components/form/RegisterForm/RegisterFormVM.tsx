@@ -1,6 +1,7 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
 import axios from "api";
 import { useSignIn } from "react-auth-kit";
+import { ModalContext } from "context/ModalContext";
 
 type RegisterFormValues = {
   email: string;
@@ -8,10 +9,13 @@ type RegisterFormValues = {
 };
 
 const RegisterFormVM = () => {
+  const { setIsButtonDisabled } = useContext(ModalContext);
   const signIn = useSignIn();
 
   // Submit Register Form logic
   const onSubmitForm = useCallback((formValues: RegisterFormValues) => {
+    setIsButtonDisabled(true);
+
     axios
       .post("v1/api/user-register", formValues)
       .then((res) => {
@@ -29,6 +33,9 @@ const RegisterFormVM = () => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setIsButtonDisabled(false);
       });
   }, []);
 

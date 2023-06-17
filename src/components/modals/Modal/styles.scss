@@ -80,6 +80,11 @@
     background-color: $red-500;
     border-top: 0.2vw solid black;
     cursor: pointer;
+
+    &--disabled {
+      background-color: $grey-600;
+      cursor: default;
+    }
   }
 
   &__buttonText {
@@ -87,11 +92,5 @@
     font-size: 1.5em;
     font-weight: bold;
     user-select: none;
-  }
-
-  &--disabledFooterButton {
-    background-color: $grey-600;
-    color: $white;
-    cursor: default;
   }
 }

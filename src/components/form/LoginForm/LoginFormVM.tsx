@@ -1,6 +1,7 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
 import axios from "api";
 import { useSignIn } from "react-auth-kit";
+import { ModalContext } from "context/ModalContext";
 
 type LoginFormValues = {
   email: string;
@@ -8,10 +9,13 @@ type LoginFormValues = {
 };
 
 const LoginFormVM = () => {
+  const { setIsButtonDisabled } = useContext(ModalContext);
   const signIn = useSignIn();
 
   // Submit Login Form logic
   const onSubmitForm = useCallback((formValues: LoginFormValues) => {
+    setIsButtonDisabled(true);
+
     axios
       .post("v1/api/login", formValues)
       .then((res) => {
@@ -29,6 +33,9 @@ const LoginFormVM = () => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setIsButtonDisabled(false);
       });
   }, []);
 
