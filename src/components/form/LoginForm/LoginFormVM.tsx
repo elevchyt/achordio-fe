@@ -17,7 +17,7 @@ const LoginFormVM = () => {
     setIsButtonDisabled(true);
 
     axios
-      .post("v1/api/login", formValues)
+      .post("v1/api/user-login", formValues)
       .then((res) => {
         // Store authentication cookie
         const dayInSeconds = 86400;
