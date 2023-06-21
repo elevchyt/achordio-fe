@@ -1,6 +1,8 @@
 @import "assets/colors.scss";
 
 .Navbar {
+  position: sticky;
+  top: 0;
   padding: 0 48px;
   margin-bottom: 42px;
   height: 10vh;
@@ -8,6 +10,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: $white;
+
+  &--mobile {
+    padding: 8px 16px;
+    border-bottom: 1px solid $black;
+  }
+
+  &__mobileMenuButton {
+    margin-left: auto;
+  }
+
+  &__mobileMenuBackdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $black;
+    opacity: 0.3;
+  }
 
   &__container {
     width: 100%;
@@ -33,6 +55,20 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    &--mobile {
+      position: absolute;
+      top: 12vh;
+      right: 1vh;
+      width: 95%;
+      height: unset;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 1;
+      background-color: $white;
+      border: 2px solid $black;
+      border-radius: 5vw;
+    }
   }
 
   &__menuItem {
@@ -41,6 +77,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--mobile {
+      width: 100%;
+      height: unset;
+      padding: 12px 4px;
+    }
   }
 
   // unauthenticated elements styling
