@@ -4,11 +4,14 @@ import graphicsHomeUrl from "assets/imgs/graphics-home.png";
 import Button from "components/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 const Home = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [animateRef, animate] = useAnimate();
+
+  const isMobileTest = false;
 
   // Fade out the current route before navigating to the next route
   const fadeAndNavigate = (route: string, durationSecs: number) => {
@@ -21,9 +24,13 @@ const Home = () => {
 
   return (
     <div className="Home" ref={animateRef}>
-      <div className="Home__headingContainer">
+      <div
+        className={`Home__headingContainer ${
+          isMobileTest ? "Home__headingContainer--mobile" : ""
+        }`}
+      >
         <motion.h1
-          className="Home__title"
+          className={`Home__title ${isMobileTest ? "Home__title--mobile" : ""}`}
           initial={{ x: -400 }}
           animate={{ x: 0 }}
           transition={{
@@ -36,7 +43,9 @@ const Home = () => {
           ACHORDIO
         </motion.h1>
         <motion.h2
-          className="Home__subtitle"
+          className={`Home__subtitle ${
+            isMobileTest ? "Home__subtitle--mobile" : ""
+          }`}
           initial={{ y: 50 }}
           animate={{ y: 0 }}
           transition={{
@@ -50,7 +59,9 @@ const Home = () => {
         </motion.h2>
       </div>
       <motion.div
-        className="Home__buttonSong"
+        className={`Home__buttonSong ${
+          isMobileTest ? "Home__buttonSong--mobile" : ""
+        }`}
         initial={{ opacity: 0, scale: 1.2, visibility: "hidden" }}
         animate={{ opacity: 1, scale: 1, visibility: "visible" }}
         transition={{ delay: 4, type: "spring", bounce: 0.5, stiffness: 120 }}
