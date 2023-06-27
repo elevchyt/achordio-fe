@@ -4,7 +4,10 @@
     "ARTISTS": "ARTISTS",
     "NEWS": "NEWS",
     "CONNECT": "Login",
-    "CREATE": "Create"
+    "CREATE": "Create",
+    "MY_PROFILE": "My profile",
+    "SETTINGS": "Settings",
+    "LOGOUT": "Logout"
   },
   "HOME": {
     "SUBTITLE": "The world's largest chord chart library...",

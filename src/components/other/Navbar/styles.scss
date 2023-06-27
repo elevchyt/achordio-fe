@@ -85,6 +85,12 @@
     }
   }
 
+  &__dividerHorizontal {
+    width: 72%;
+    height: 1px;
+    background-color: $grey-700;
+  }
+
   // unauthenticated elements styling
   &__unauthenticatedContainer {
     height: 100%;
@@ -116,7 +122,6 @@
   }
 
   &__profileContainer {
-    width: 100px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -129,9 +134,79 @@
     background-color: $grey-700;
   }
 
-  &__dividerHorizontal {
-    width: 72%;
-    height: 1px;
-    background-color: $grey-700;
+  &__profileDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 500;
+    user-select: none;
+  }
+
+  &__profileOptionButton {
+    margin: 0 8px;
+    cursor: pointer;
+  }
+
+  &__username {
+    margin-bottom: 4px;
+  }
+
+  &__ratingContainer {
+    display: flex;
+    align-items: center;
+    color: $grey-500;
+  }
+
+  &__ratingIcon {
+    fill: $gold;
+  }
+
+  &__userAvatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    background-color: red; // testing
+  }
+
+  &__optionsToggleIcon {
+    position: absolute;
+    bottom: -14px;
+    right: -14px;
+    cursor: pointer;
+  }
+
+  &__profileOptionsDropdown {
+    position: absolute;
+    top: 10vh;
+    right: 2vw;
+    width: 14vw;
+    height: 14vh;
+    background: $white;
+    border: 2px solid $black;
+    border-radius: 1.4vw;
+  }
+
+  &__optionContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 31.7%;
+    padding: 0 12px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__optionText {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+
+  &__optionsDivider {
+    width: 100%;
+    height: 2px;
+    background-color: $black;
   }
 }
