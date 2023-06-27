@@ -11,10 +11,7 @@ import { motion } from "framer-motion";
 import { isMobile } from "react-device-detect";
 
 const Navbar = () => {
-  // const isAuthenticated = useIsAuthenticated();
-  const isAuthenticated = () => {
-    return true;
-  };
+  const isAuthenticated = useIsAuthenticated();
   const { t } = useTranslation();
   const { isOpen, setIsOpen } = useContext(ModalContext);
   const { modalType, setModalType } = useContext(ModalContext);
