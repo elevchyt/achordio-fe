@@ -21,7 +21,7 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const isMobileTest = true;
+  const isMobileTest = false;
 
   return (
     <div className={`Navbar ${isMobileTest ? "Navbar--mobile" : ""}`}>
